@@ -1,0 +1,39 @@
+{
+  "name": "geocities-blocks",
+  "title": "GeoCities Blocks",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:melchoyce/geocities-blocks.git"
+  },
+  "license": "GPL-2.0+",
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.5.0"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
+    "start": "cross-env BABEL_ENV=default webpack --watch",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint assets/js --ext=js,jsx"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@wordpress/babel-plugin-import-jsx-pragma": "^1.1.2",
+    "@wordpress/babel-preset-default": "^3.0.1",
+    "@wordpress/eslint-plugin": "^1.0.0",
+    "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "5.2.0",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.10.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
