@@ -2,6 +2,13 @@ dist: xenial
 
 language: php
 
+php: 7.1
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
 before_install:
   - nvm install
 
