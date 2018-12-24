@@ -15,11 +15,12 @@
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
     "start": "cross-env BABEL_ENV=default webpack --watch",
     "ci": "npm run lint",
-    "lint": "concurrently \"npm run lint-js\" \"npm run lint-css\"",
+    "lint": "concurrently \"npm run lint-js\" \"npm run lint-css\" \"npm run lint-php\"",
     "lint-js": "eslint . --ext=js,jsx",
     "lint-js:fix": "eslint . --ext=js,jsx --fix",
     "lint-css": "stylelint '**/*.scss'",
-    "lint-css:fix": "stylelint '**/*.scss' --fix"
+    "lint-css:fix": "stylelint '**/*.scss' --fix",
+    "lint-php": "composer run lint"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",

@@ -6,6 +6,8 @@
  * Version: 0.0.1
  * Author: TBD
  * Text Domain: geocities-blocks
+ *
+ * @package geocities-blocks
  */
 
 defined( 'ABSPATH' ) || die();
@@ -27,11 +29,14 @@ add_action( 'plugins_loaded', 'geocities_initialize' );
  * Register blocks with their scripts.
  */
 function geocities_register_block() {
-	register_block_type( 'geocities/example', array(
-		'editor_script' => 'geocities-example-block',
-		'editor_style'  => 'geocities-example-block',
-	) );
-	
+	register_block_type(
+		'geocities/example',
+		array(
+			'editor_script' => 'geocities-example-block',
+			'editor_style'  => 'geocities-example-block',
+		)
+	);
+
 	// Register more blocks here.
 }
 
@@ -51,7 +56,7 @@ function geocities_gutenberg_scripts() {
 		array(),
 		geocities_get_file_version( 'build/example-block.css' )
 	);
-	
+
 	// Register more block scripts & styles here.
 }
 add_action( 'enqueue_block_editor_assets', 'geocities_gutenberg_scripts' );
@@ -60,6 +65,7 @@ add_action( 'enqueue_block_editor_assets', 'geocities_gutenberg_scripts' );
  * Get the file modified time if we're using SCRIPT_DEBUG.
  *
  * @param string $file Local path to the file.
+ * @return string The cache buster value to use for the given file.
  */
 function geocities_get_file_version( $file ) {
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
@@ -70,13 +76,16 @@ function geocities_get_file_version( $file ) {
 
 /**
  * Add a new category for Geocities blocks.
+ *
+ * @param array $categories The block categories registered.
+ * @return array The block categories with the geocities category added.
  */
 function geocities_register_block_category( $categories ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'geocities',
+				'slug'  => 'geocities',
 				'title' => __( 'GeoCities', 'geocities-blocks' ),
 			),
 		)
