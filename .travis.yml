@@ -1,0 +1,12 @@
+dist: xenial
+
+language: php
+
+before_install:
+  - nvm install
+
+install:
+  - npm install
+
+script:
+  - npm run ci
