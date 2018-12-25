@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset>
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="5.2-"/>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress.WP.I18n"/>
+	<config name="text_domain" value="geocities-blocks"/>
+
+
+	<arg value="ps"/>
+	<arg name="extensions" value="php"/>
+
+	<file>geocities-blocks.php</file>
+	<file>./assets</file>
+</ruleset>
